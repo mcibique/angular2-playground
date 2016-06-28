@@ -24,8 +24,12 @@ module.exports = {
     loaders: [
       {
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader'],
+        loader: 'awesome-typescript-loader',
         exclude: [/\.spec\.ts$/]
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'autoprefixer', 'sass']
       },
       {
         test: /\.html$/,
@@ -60,5 +64,13 @@ module.exports = {
       poll: 1000
     },
     outputPath: './dist'
+  },
+  sassLoader: {
+    includePaths: ['./node_modules/normalize-scss/sass/', './src/styles/']
+  },
+  autoprefixerLoader: {
+    safe: true,
+    remove: false,
+    browsers: ['last 2 version']
   }
 }
