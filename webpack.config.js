@@ -65,7 +65,11 @@ module.exports = {
     },
     outputPath: './dist'
   },
+  cssLoader: {
+    sourceMap: true
+  },
   sassLoader: {
+    sourceMap: true,
     includePaths: ['./node_modules/normalize-scss/sass/', './src/styles/']
   },
   autoprefixerLoader: {
