@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const DefinePlugin = require('webpack/lib/DefinePlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const SassLintPlugin = require('sasslint-webpack-plugin');
 
 module.exports = {
   debug: true,
@@ -52,6 +53,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       chunksSortMode: 'dependency'
+    }),
+    new SassLintPlugin({
+      configFile: './.sass-lint.yml',
+      glob: './src/**/*.s?(a|c)ss',
+      quiet: false,
+
     })
   ],
   devServer: {
