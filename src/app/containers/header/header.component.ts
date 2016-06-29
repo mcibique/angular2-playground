@@ -6,4 +6,6 @@ import './header.component.scss';
   encapsulation: ViewEncapsulation.None,
   template: require('./header.component.html')
 })
-export class Header {}
+export class Header {
+  title: string = 'User Management';
+}
