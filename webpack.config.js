@@ -21,21 +21,21 @@ module.exports = {
     modulesDirectories: ['node_modules'],
   },
   module: {
-    loaders: [
-      {
-        test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
-        exclude: [/\.spec\.ts$/]
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['style', 'css', 'autoprefixer', 'sass']
-      },
-      {
-        test: /\.html$/,
-        loader: 'raw-loader'
-      }
-    ]
+    preLoaders: [{
+      test: /\.ts$/,
+      loader: 'tslint'
+    }],
+    loaders: [{
+      test: /\.ts$/,
+      loader: 'awesome-typescript-loader',
+      exclude: [/\.spec\.ts$/]
+    }, {
+      test: /\.scss$/,
+      loaders: ['style', 'css', 'autoprefixer', 'sass']
+    }, {
+      test: /\.html$/,
+      loader: 'raw-loader'
+    }]
   },
   plugins: [
     new DefinePlugin({
@@ -76,5 +76,12 @@ module.exports = {
     safe: true,
     remove: false,
     browsers: ['last 2 version']
+  },
+  tslint: {
+    emitErrors: false,
+    failOnHint: false,
+    resourcePath: './src',
+    formattersDirectory: 'node_modules/custom-tslint-formatters/formatters',
+    formatter: 'grouped'
   }
 }

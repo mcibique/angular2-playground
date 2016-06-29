@@ -7,5 +7,5 @@ import './header.component.scss';
   template: require('./header.component.html')
 })
 export class Header {
-  title: string = 'User Management';
+  public title: string = 'User Management';
 }
