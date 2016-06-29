@@ -25,6 +25,10 @@ module.exports = {
     preLoaders: [{
       test: /\.ts$/,
       loader: 'tslint'
+    }, {
+      test: /\.html/,
+      loader: 'htmlhint',
+      exclude: /node_modules/
     }],
     loaders: [{
       test: /\.ts$/,

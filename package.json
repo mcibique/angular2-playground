@@ -13,7 +13,8 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "tslint": "tslint -s ./node_modules/custom-tslint-formatters/formatters -t grouped ./src/**/*.ts",
-    "sass-lint": "sass-lint -v -q"
+    "sass-lint": "sass-lint -v -q",
+    "htmlhint": "htmlhint"
   },
   "keywords": [],
   "author": "mcibique@hotmail.com",
@@ -40,6 +41,7 @@
     "css-loader": "0.23.1",
     "custom-tslint-formatters": "1.1.0",
     "html-webpack-plugin": "2.21.0",
+    "htmlhint-loader": "0.1.0",
     "node-sass": "3.8.0",
     "raw-loader": "0.5.1",
     "sass-lint": "1.8.2",
