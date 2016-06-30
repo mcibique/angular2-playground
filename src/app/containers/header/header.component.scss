@@ -1,11 +1,18 @@
+@import 'variables';
+
 header {
-  background-color: #dedede;
+  background-color: $header-background;
 
   h1 {
-    max-width: 980px;
+    max-width: 1280px;
     margin: 0 auto;
     font-size: 3rem;
     line-height: 4rem;
-    padding: 1rem 0;
+    padding: 3rem 5%;
+  }
+
+  a {
+    color: $font-color;
+    text-decoration: none;
   }
 }

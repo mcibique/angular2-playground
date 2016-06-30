@@ -12,3 +12,7 @@ import '@angular/http';
 import '@angular/router';
 
 import 'angular2-hmr';
+
+import './styles/_vendor.scss';
+import './styles/_fonts.scss';
+import './styles/_general.scss';
