@@ -1,0 +1,5 @@
+<div class="user">
+  <avatar [avatar]="user" [altText]="user.fullName" (selected)="onSelected()"></avatar>
+  <h3 class="user-full-name"><a [routerLink]="['/user/detail', user.id]">{{ user | user }}</a></h3>
+  <p class="user-email"><a [href]="'mailto:' + user.userName">{{ user.userName }}</a></p>
+</div>

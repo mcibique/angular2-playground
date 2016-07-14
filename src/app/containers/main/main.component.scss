@@ -1,7 +1,13 @@
+@import 'variables';
+
 main {
   display: flex;
 
   > section {
     flex: 1;
   }
+}
+
+#main-content {
+  padding: 4rem $content-left-padding;
 }

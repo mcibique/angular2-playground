@@ -26,3 +26,13 @@ h2,
 h3 {
   margin: 0;
 }
+
+a,
+a:link {
+  color: $link-color;
+}
+
+a:focus,
+a:hover {
+  color: $link-color-hover;
+}

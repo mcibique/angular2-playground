@@ -1,0 +1,11 @@
+<h2 class="content-main-heading">Edit user - {{ user | user }}</h2>
+
+<div class="user-edit">
+  <div class="user-loader" *ngIf="loading">
+    Loading&hellip;
+  </div>
+  <div class="user-edit-form" *ngIf="!loading">
+  </div>
+</div>
+
+<a [routerLink]="['/user/detail', user.id]" href="#">back</a>

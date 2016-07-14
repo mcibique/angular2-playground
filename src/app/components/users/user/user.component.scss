@@ -1,0 +1,38 @@
+@import 'variables';
+@import 'mixins';
+
+.user {
+  display: block;
+  text-align: center;
+  border: 1px solid $border-color;
+  padding: 1.5rem 5%;
+
+  @media (max-width: $breakpoint-mobile-large) {
+    text-align: left;
+  }
+
+  %user-row {
+    @include ellipsis;
+    line-height: 2.5rem;
+
+    @media (max-width: $breakpoint-mobile-large) {
+      padding-left: 1rem;
+    }
+  }
+
+  .user-full-name {
+    @extend %user-row;
+    font-size: 1.6rem;
+  }
+
+  .user-email {
+    @extend %user-row;
+    font-size: 1.2rem;
+  }
+
+  .avatar {
+    img {
+      cursor: pointer;
+    }
+  }
+}

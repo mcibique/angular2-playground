@@ -1,0 +1,15 @@
+<h2 class="content-main-heading">User detail - {{ user | user }}</h2>
+
+<div class="user-detail">
+  <div class="user-loader" *ngIf="loading">
+    Loading&hellip;
+  </div>
+  <div class="user-detail-content" *ngIf="!loading">
+    <avatar [avatar]="user" [altText]="user | user"></avatar>
+    <h3 class="user-first-name">{{ user.firstName }}</h3>
+    <h3 class="user-last-name">{{ user.lastName }}</h3>
+  </div>
+</div>
+
+<a [routerLink]="['/user/edit', user.id]" href="#">edit</a>
+<a [routerLink]="['/users']" href="#">back</a>

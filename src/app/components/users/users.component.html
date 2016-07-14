@@ -1,0 +1,13 @@
+<h2 class="content-main-heading">Users</h2>
+
+<ul class="user-list">
+  <li class="user-list-loading" *ngIf="loading">
+    Loading users&hellip;
+  </li>
+  <li class="user-list-item" *ngFor="let user of users">
+    <user [user]="user" (selected)="onSelected($event, user)"></user>
+  </li>
+  <li class="user-list-item" *ngIf="!loading">
+    <a class="create-new-user" [routerLink]="['/user/create']" href="#">Add new user</a>
+  </li>
+</ul>
