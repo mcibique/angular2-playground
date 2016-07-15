@@ -12,7 +12,7 @@ export class AvatarComponent {
   @Input('avatar') public images: Avatar;
   @Output() public selected = new EventEmitter();
 
-  onSelected() {
+  public onSelected() {
     this.selected.emit({});
   }
 }

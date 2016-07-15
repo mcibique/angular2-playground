@@ -18,7 +18,7 @@ export class UsersComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.loading = true;
     this.users = [];
 
@@ -28,7 +28,7 @@ export class UsersComponent implements OnInit {
       .then(_ => this.loading = false);
   }
 
-  onSelected($event, user) {
+  public onSelected($event, user) {
     this.router.navigate(['/user/detail', user.id]);
   }
 }

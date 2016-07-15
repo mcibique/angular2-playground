@@ -3,7 +3,7 @@ import { User } from './user.model';
 
 @Pipe({ name: 'user', pure: true })
 export class UserPipe implements PipeTransform {
-  transform(user: User): string {
+  public transform(user: User): string {
     if (!user) {
       return '';
     }

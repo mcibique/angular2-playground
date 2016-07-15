@@ -20,7 +20,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
 
   constructor(private userService: UserService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
+  public ngOnInit() {
     this.loading = true;
     this.user = User.getEmpty();
 
@@ -33,7 +33,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy() {
+  public ngOnDestroy() {
     this.sub.unsubscribe();
   }
 }

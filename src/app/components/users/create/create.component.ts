@@ -12,7 +12,7 @@ import './create.component.scss';
 export class CreateUserComponent implements OnInit {
   public user: User;
 
-  ngOnInit() {
+  public ngOnInit() {
     this.user = new User(1, '', '', '');
   }
 }

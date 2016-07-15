@@ -16,7 +16,7 @@ export class UserComponent {
   @Input() public user: User;
   @Output() public selected = new EventEmitter();
 
-  onSelected() {
+  public onSelected() {
     this.selected.emit({
       user: this.user
     });
