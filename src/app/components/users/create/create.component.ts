@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ROUTER_DIRECTIVES }  from '@angular/router';
 
 import { User } from './../shared/user.model';
+
 import './create.component.scss';
 
 @Component({

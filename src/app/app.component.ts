@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
+import { AppState } from './app.service';
+import { Footer } from './containers/footer/footer.component';
 import { Header } from './containers/header/header.component';
 import { Main } from './containers/main/main.component';
-import { Footer } from './containers/footer/footer.component';
-import { AppState } from './app.service';
+
 import './app.component.scss';
 
 @Component({

@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { Avatar } from './avatar.model';
+
 import './avatar.component.scss';
 
 @Component({

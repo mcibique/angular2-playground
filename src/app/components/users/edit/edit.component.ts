@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ROUTER_DIRECTIVES, ActivatedRoute }  from '@angular/router';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, ROUTER_DIRECTIVES }  from '@angular/router';
 
-import { UserService } from './../shared/user.service';
 import { User } from './../shared/user.model';
 import { UserPipe } from './../shared/user.pipe';
+import { UserService } from './../shared/user.service';
+
 import './edit.component.scss';
 
 @Component({

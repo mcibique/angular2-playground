@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES }  from '@angular/router';
 
-import { UserComponent } from './user/user.component';
 import { User } from './shared/user.model';
 import { UserService } from './shared/user.service';
+import { UserComponent } from './user/user.component';
+
 import './users.component.scss';
 
 @Component({
