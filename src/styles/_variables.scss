@@ -1,18 +1,18 @@
 $font-color: #333 !default;
-$base-font-size: 1.6rem;
+$base-font-size: 1.6rem !default;
 $font-family: 'Source Sans Pro', 'Helvetica Neue', 'Arial', 'sans-serif' !default;
 
-$border-color: #ccc;
+$border-color: #ccc !default;
 
-$link-color: #555;
-$link-color-hover: rgba($link-color, 0.85);
+$link-color: #555 !default;
+$link-color-hover: rgba($link-color, 0.85) !default;
 
-$header-background: #dedede;
-$navigation-background: #f4f4f4;
-$footer-background: #e4e4e4;
+$header-background: #dedede !default;
+$navigation-background: #f4f4f4 !default;
+$footer-background: #e4e4e4 !default;
 
-$breakpoint-laptop: 1024px;
-$breakpoint-tablet: 768px;
-$breakpoint-mobile-large: 425px;
+$breakpoint-laptop: 1024px !default;
+$breakpoint-tablet: 768px !default;
+$breakpoint-mobile-large: 425px !default;
 
-$content-left-padding: 5%;
+$content-left-padding: 5% !default;
