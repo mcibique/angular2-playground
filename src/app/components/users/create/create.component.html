@@ -1,3 +1,9 @@
 <h2 class="content-main-heading">Create new user</h2>
 
+<div class="user-create">
+  <div class="user-create-form">
+    <user-form [user]="user" (onSave)="onSave()"></user-form>
+  </div>
+</div>
+
 <a [routerLink]="['/users']" href="#">back</a>

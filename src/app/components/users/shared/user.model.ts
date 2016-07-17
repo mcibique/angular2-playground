@@ -18,4 +18,8 @@ export class User implements Avatar {
   get avatarThumbnail(): string {
     return '//placehold.it/50x50';
   }
+
+  public clone(): User {
+    return new User(this.id, this.userName, this.firstName, this.lastName);
+  }
 }

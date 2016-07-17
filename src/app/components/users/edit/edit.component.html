@@ -5,6 +5,7 @@
     Loading&hellip;
   </div>
   <div class="user-edit-form" *ngIf="!loading">
+    <user-form [user]="user" (onSave)="onSave()"></user-form>
   </div>
 </div>
 

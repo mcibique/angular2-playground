@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, ROUTER_DIRECTIVES }  from '@angular/router';
 
+import { UserFormComponent } from './../form/user-form.component';
 import { User } from './../shared/user.model';
 import { UserPipe } from './../shared/user.pipe';
 import { UserService } from './../shared/user.service';
@@ -10,7 +11,7 @@ import './edit.component.scss';
 @Component({
   selector: 'edit',
   providers: [ UserService ],
-  directives: [ ROUTER_DIRECTIVES ],
+  directives: [ ROUTER_DIRECTIVES, UserFormComponent ],
   pipes: [ UserPipe ],
   template: require('./edit.component.html')
 })
@@ -36,5 +37,11 @@ export class UserEditComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  public onSave() {
+    this.userService.updateUser(this.user).then(updatedUser => {
+      this.user = updatedUser;
+    });
   }
 }

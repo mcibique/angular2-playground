@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()" #userForm="ngForm">
+  <div class="form-row">
+    <label for="user-name">User name</label>
+    <input type="text" id="user-name" name="userName" [(ngModel)]="user.userName" required #userName="ngModel">
+  </div>
+  <div class="form-row">
+    <label for="first-name">First name</label>
+    <input type="text" id="first-name" name="firstName" [(ngModel)]="user.firstName">
+  </div>
+  <div class="form-row">
+    <label for="last-name">Last name</label>
+    <input type="text" id="last-name" name="lastName" [(ngModel)]="user.lastName">
+  </div>
+  <button type="submit" [disabled]="!userForm.form.valid">Save</button>
+</form>

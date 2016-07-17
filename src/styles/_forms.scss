@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'mixins';
+
+$input-border-color: $border-color;
+$input-border-radius: $border-radius !default;
+$input-line-height: 2.2rem !default;
+$input-font-size: 1.8rem !default;
+$input-padding: 0.9rem 2rem !default;
+
+form {
+  .form-row {
+    + .form-row,
+    + button {
+      margin-top: 2rem;
+    }
+  }
+  label {
+    display: block;
+    font-weight: 600;
+  }
+  input {
+    @include ellipsis;
+    display: block;
+    width: 100%;
+    max-width: 40rem;
+    border: 0.1rem solid $input-border-color;
+    border-radius: $input-border-radius;
+    line-height: $input-line-height;
+    font-size: $input-font-size;
+    padding: $input-padding;
+
+    &:focus {
+      box-shadow: 0 0 0.4rem $input-border-color;
+      outline: 0;
+    }
+  }
+}

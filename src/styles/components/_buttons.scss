@@ -1,0 +1,39 @@
+@import '../variables';
+
+$button-background-color: #ddd !default;
+$button-hover-background-color: rgba($button-background-color, 0.75) !default;
+$button-border-color: $border-color !default;
+$button-line-height: 2.2rem !default;
+$button-font-size: 1.8rem !default;
+$button-padding: 0.9rem 2rem !default;
+$button-border-radius: $border-radius !default;
+
+button {
+  border: 0.1rem solid $button-border-color;
+  background-color: $button-background-color;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  color: inherit;
+  border-radius: $button-border-radius;
+  box-shadow: 0 0 0.4rem $button-border-color;
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    background-color: $button-hover-background-color;
+  }
+
+  &:active {
+    box-shadow: 0 0 0.1rem $button-border-color;
+  }
+
+  &[disabled] {
+    background-color: rgba($button-background-color, 0.5);
+    border-color: rgba($button-border-color, 0.5);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
