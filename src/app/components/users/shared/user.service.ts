@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 import { User } from './user.model';
 
@@ -13,46 +14,48 @@ let lastId = users.length;
 
 @Injectable()
 export class UserService {
-  public getUsers(): Promise<User[]> {
-    return new Promise<User[]>(resolve => {
-      setTimeout(_ => resolve(users.map(u => u.clone())), 1000);
-    });
+  public getUsers(): Observable<User[]> {
+    return Observable.create(observer => {
+        observer.next(users.map(user => user.clone()));
+        observer.complete();
+      })
+      .delay(1000);
   }
 
-  public getUsersCount(): Promise<number> {
-    return new Promise<number>(resolve => {
-      setTimeout(_ => resolve(users.length), 1000);
-    });
+  public getUsersCount(): Observable<number> {
+    return Observable
+      .create(observer => {
+        observer.next(users.length);
+        observer.complete();
+      })
+      .delay(1000);
   }
 
-  public getUser(id: number): Promise<User> {
-    return new Promise<User>(resolve => {
-      setTimeout(_ => {
-        let user = users.filter(u => u.id === id)[0];
-        resolve(user.clone());
-      }, 500);
-    });
+  public getUser(id: number): Observable<User> {
+    return Observable.from(users).delay(500).filter(u => u.id === id).map(u => u.clone());
   }
 
-  public updateUser(user: User): Promise<User> {
-    return new Promise<User>(resolve => {
-      setTimeout(_ => {
-        let existingUser = users.filter(u => u.id === user.id)[0];
+  public updateUser(user: User): Observable<User> {
+    return Observable
+      .from(users)
+      .delay(300)
+      .filter(u => u.id === user.id)
+      .do(existingUser => {
         existingUser.userName = user.userName;
         existingUser.firstName = user.firstName;
         existingUser.lastName = user.lastName;
-        resolve(existingUser.clone());
-      }, 300);
-    });
+      })
+      .map(existingUser => existingUser.clone());
   }
 
-  public createUser(user: User): Promise<User> {
-    return new Promise<User>(resolve => {
-      setTimeout(_ => {
+  public createUser(user: User): Observable<User> {
+    return Observable
+      .create(observer => {
         user.id = ++lastId;
         users.push(user);
-        resolve(user.clone());
-      } , 500);
-    });
+        observer.next(user.clone());
+        observer.complete();
+      })
+      .delay(500);
   };
 }

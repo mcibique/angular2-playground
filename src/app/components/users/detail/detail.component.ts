@@ -30,8 +30,11 @@ export class UserDetailComponent implements OnInit, OnDestroy {
       let id = +params['id'];
       this.userService
         .getUser(id)
-        .then(user => this.user = user)
-        .then(_ => this.loading = false);
+        .subscribe(
+          user => this.user = user,
+          null,
+          () => this.loading = false
+        );
     });
   }
 

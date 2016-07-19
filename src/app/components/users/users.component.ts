@@ -25,9 +25,11 @@ export class UsersComponent implements OnInit {
 
     this.userService
       .getUsers()
-      .then(users => this.users = users)
-      .then(console.log.bind(console))
-      .then(_ => this.loading = false);
+      .subscribe(
+        users => this.users = users,
+        null,
+        () => this.loading = false
+      );
   }
 
   public onSelected($event, user) {

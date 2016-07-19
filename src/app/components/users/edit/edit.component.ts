@@ -30,8 +30,11 @@ export class UserEditComponent implements OnInit, OnDestroy {
       let id = +params['id'];
       this.userService
         .getUser(id)
-        .then(user => this.user = user)
-        .then(_ => this.loading = false);
+        .subscribe(
+          user => this.user = user,
+          null,
+          () => this.loading = false
+        );
     });
   }
 
@@ -40,7 +43,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
   }
 
   public onSave() {
-    this.userService.updateUser(this.user).then(updatedUser => {
+    this.userService.updateUser(this.user).subscribe(updatedUser => {
       this.user = updatedUser;
     });
   }
