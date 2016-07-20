@@ -10,7 +10,7 @@ import './detail.component.scss';
 
 @Component({
   selector: 'detail',
-  providers: [ UserService ],
+  providers: [ UserService, UserPipe ],
   directives: [ AvatarComponent, ROUTER_DIRECTIVES ],
   pipes: [ UserPipe ],
   template: require('./detail.component.html')
@@ -20,7 +20,7 @@ export class UserDetailComponent implements OnInit, OnDestroy {
   private loading: boolean;
   private sub: any;
 
-  constructor(private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private userService: UserService, private route: ActivatedRoute, private userPipe: UserPipe) { }
 
   public ngOnInit() {
     this.loading = true;
@@ -40,5 +40,10 @@ export class UserDetailComponent implements OnInit, OnDestroy {
 
   public ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  public getMainHeading(): string {
+    const userString: string = this.userPipe.transform(this.user);
+    return userString ? `User detail - ${userString}` : 'User detail';
   }
 }

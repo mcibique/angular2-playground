@@ -9,11 +9,16 @@ $link-color: #555 !default;
 $link-color-hover: rgba($link-color, 0.85) !default;
 
 $header-background: #dedede !default;
+$main-background: #fff !default;
 $navigation-background: #f4f4f4 !default;
 $footer-background: #e4e4e4 !default;
 
+$breakpoint-laptop-large: 1440px !default;
 $breakpoint-laptop: 1024px !default;
 $breakpoint-tablet: 768px !default;
 $breakpoint-mobile-large: 425px !default;
+$breakpoint-mobile-medium: 375px !default;
+$breakpoint-mobile-small: 320px !default;
+$viewport-min-width: 320px;
 
 $content-left-padding: 5% !default;

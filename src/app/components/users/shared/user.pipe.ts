@@ -9,6 +9,6 @@ export class UserPipe implements PipeTransform {
       return '';
     }
 
-    return user.fullName || user.userName;
+    return user.fullName || user.userName || '';
   }
 }

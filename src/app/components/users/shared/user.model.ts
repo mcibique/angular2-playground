@@ -8,7 +8,7 @@ export class User implements Avatar {
   }
 
   get fullName(): string {
-    return `${this.firstName} ${this.lastName}`;
+    return `${this.firstName} ${this.lastName}`.trim();
   }
 
   get avatar(): string {

@@ -1,0 +1,54 @@
+@import 'variables';
+
+$modal-dialog-border-color: $border-color !default;
+$modal-dialog-backdrop-background-color: rgba(#000, 0.5) !default;
+$modal-dialog-background-color: $main-background !default;
+$modal-dialog-horizontal-padding: 3rem !default;
+$modal-dialog-vertical-padding: 2rem !default;
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $modal-dialog-backdrop-background-color;
+  min-width: $viewport-min-width;
+}
+
+.modal-dialog {
+  background-color: $modal-dialog-background-color;
+  border: 0.1rem solid $modal-dialog-border-color;
+  box-shadow: 0 0 1rem $modal-dialog-border-color;
+  max-width: 95%;
+  margin: 5% auto;
+
+  @media (min-width: $breakpoint-mobile-large + 1px) and (max-width: $breakpoint-laptop) {
+    max-width: 80%;
+  }
+
+  @media (min-width: $breakpoint-laptop + 1px) and (max-width: $breakpoint-laptop-large) {
+    max-width: percentage(0.6);
+  }
+
+  @media (min-width: $breakpoint-laptop-large + 1px) {
+    max-width: 0.6 * $breakpoint-laptop-large;
+  }
+
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: $modal-dialog-vertical-padding $modal-dialog-horizontal-padding;
+  }
+
+  .modal-header {
+    font-size: 2.5rem;
+    line-height: 3rem;
+    border-bottom: 0.1rem solid $modal-dialog-border-color;
+  }
+
+  .modal-footer {
+    border-top: 0.1rem solid $modal-dialog-border-color;
+    text-align: right;
+  }
+}

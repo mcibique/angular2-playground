@@ -1,5 +1,7 @@
+@import 'variables';
+
 user-management {
-  min-width: 320px;
+  min-width: $viewport-min-width;
   min-height: 100%;
   display: flex;
   flex-direction: column;
