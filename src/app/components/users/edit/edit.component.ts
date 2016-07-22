@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, ROUTER_DIRECTIVES }  from '@angular/router';
+import { ActivatedRoute }  from '@angular/router';
 
 import { ModalService } from '../../modal/modal.service';
 import { UserFormComponent } from './../form/user-form.component';
@@ -12,7 +12,7 @@ import './edit.component.scss';
 @Component({
   selector: 'edit',
   providers: [ UserService, UserPipe ],
-  directives: [ ROUTER_DIRECTIVES, UserFormComponent ],
+  directives: [ UserFormComponent ],
   pipes: [ UserPipe ],
   template: require('./edit.component.html')
 })

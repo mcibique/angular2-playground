@@ -1,6 +1,6 @@
 <form (ngSubmit)="onSubmit()" #userForm="ngForm" autocomplete="off" novalidate>
   <div class="form-row">
-    <label for="user-name">User name</label>
+    <label for="user-name">User name <span class="required-label">*</span></label>
     <input type="text" id="user-name" name="userName" [(ngModel)]="user.userName" required #userName="ngModel" autofocus>
   </div>
   <div class="form-row">

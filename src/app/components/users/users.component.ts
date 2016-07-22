@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES }  from '@angular/router';
+import { Router }  from '@angular/router';
 
 import { User } from './shared/user.model';
 import { UserService } from './shared/user.service';
@@ -10,7 +10,7 @@ import './users.component.scss';
 @Component({
   selector: 'users',
   providers: [ UserService ],
-  directives: [ UserComponent, ROUTER_DIRECTIVES ],
+  directives: [ UserComponent ],
   template: require('./users.component.html')
 })
 export class UsersComponent implements OnInit {

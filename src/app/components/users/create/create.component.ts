@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ROUTER_DIRECTIVES }  from '@angular/router';
+import { Router }  from '@angular/router';
 
 import { ModalService } from '../../modal/modal.service';
 import { UserFormComponent } from './../form/user-form.component';
@@ -10,7 +10,7 @@ import './create.component.scss';
 
 @Component({
   selector: 'create',
-  directives: [ ROUTER_DIRECTIVES, UserFormComponent ],
+  directives: [ UserFormComponent ],
   providers: [ UserService ],
   template: require('./create.component.html')
 })
