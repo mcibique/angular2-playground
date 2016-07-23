@@ -12,6 +12,11 @@
   "exclude": [
     "node_modules"
   ],
+  "types": [
+    "core-js",
+    "jasmine",
+    "node"
+  ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
     "useWebpackText": true
