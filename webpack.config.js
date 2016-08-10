@@ -61,8 +61,7 @@ module.exports = {
     new SassLintPlugin({
       configFile: './.sass-lint.yml',
       glob: './src/**/*.s?(a|c)ss',
-      quiet: false,
-
+      quiet: false
     })
   ],
   devServer: {

@@ -1,0 +1,8 @@
+<ul class="role-list">
+  <li class="role-item" *ngFor="let role of roles">
+    <icon *ngIf="role.isSystemRole">locked</icon>
+    <h3>{{ role.name }}</h3>
+    <div>{{ role.description }}</div>
+    <div>{{ role.numberOfUsers }}</div>
+  </li>
+</ul>
